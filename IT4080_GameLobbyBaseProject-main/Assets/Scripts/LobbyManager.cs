@@ -16,7 +16,11 @@ public class LobbyManager : NetworkBehaviour
     public Button btnReady;
     public Player playerPrefab;
 
-    private NetworkList<PlayerInfo> allPlayers = new NetworkList<PlayerInfo>();
+    private NetworkList<PlayerInfo> allPlayers;
+    public void Awake()
+    {
+        allPlayers = new NetworkList<PlayerInfo>();
+    }
     private List<LobbyPlayerPanel> playerPanels = new List<LobbyPlayerPanel>();
 
     private Color[] playerColors = new Color[]
